@@ -45,7 +45,7 @@
     "vscode-languageserver-types": "^3.16.0",
     "vscode-nls": "^4.1.2",
     "vscode-uri": "^2.1.1",
-    "yaml-language-server-parser": "next"
+    "yaml-language-server-parser": "file://../yaml-ast-parser"
   },
   "devDependencies": {
     "@types/chai": "^4.2.12",
@@ -75,7 +75,7 @@
     "clean": "rimraf out/server && rimraf lib",
     "compile": "tsc -p .",
     "watch": "tsc --watch -p .",
-    "test": "mocha --require ts-node/register --timeout 5000 --ui bdd ./test/*.test.ts",
+    "test": "mocha --require ts-node/register --timeout 5000 --ui bdd ./test/*.test.ts -g 'Custom Tag tests'",
     "coverage": "nyc mocha --require ts-node/register --timeout 5000 --require source-map-support/register --recursive --ui tdd ./test/*.test.ts",
     "coveralls": "nyc --reporter=lcov --reporter=text mocha --timeout 5000 --require ts-node/register --require source-map-support/register --recursive --ui tdd ./test/*.test.ts",
     "lint": "eslint -c .eslintrc.js --ext .ts src test",

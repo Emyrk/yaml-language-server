@@ -98,7 +98,8 @@ export function customTagsToAdditionalOptions(customTags: string[]): Type {
   });
 
   const additionalOptions: Yaml.LoadOptions = {
-    schema: schemaWithAdditionalTags,
+    // this was overriding the previous schema with all the tags
+    // schema: schemaWithAdditionalTags,
   };
 
   return additionalOptions;
